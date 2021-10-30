@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+rm -rf dist
+mkdir -p dist
+echo "copy index.js ..."
+cp src/index.js dist/index.js
+echo "minifying index.js ..."
+./node_modules/.bin/uglifyjs dist/index.js > dist/index.min.js
+echo "Copy dist/ to web/ ..."
+rm -rf web/static/assets/lib/cubify/dev/
+mkdir -p web/static/assets/lib/cubify/dev/
+cp -R dist/* web/static/assets/lib/cubify/dev/
+echo "done."
+
