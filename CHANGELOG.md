@@ -2,7 +2,7 @@
 
 ## v0.0.2
 
- - add missing vairables
+ - add missing variables
 
 
 ## v0.0.1
