@@ -20,13 +20,15 @@
     "fedep": "^0.0.17",
     "ldcover": "^2.0.0",
     "ldloader": "^2.1.0",
-    "ldview": "^0.2.7"
+    "ldview": "^0.2.7",
+    "lottie-web": "^5.8.1"
   },
   "frontendDependencies": {
     "root": "web/static/assets/lib",
     "modules": [
       "@loadingio/bootstrap.ext",
       "@loadingio/ldquery",
+      "lottie-web",
       "bootstrap",
       "ldcover",
       "ldloader",

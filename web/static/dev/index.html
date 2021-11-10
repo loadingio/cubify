@@ -1,0 +1,106 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" type="text/css" href="/assets/lib/bootstrap/main/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="/assets/lib/@loadingio/bootstrap.ext/main/index.min.css"><style type="text/css">html,
+body {
+  width: 100%;
+  height: 100%;
+}
+</style></head><body><div class="d-flex align-items-center justify-content-center w-100 h-100" id="root"><div class="d-flex" style="gap:1em"><svg class="d-block rounded shadow-sm bg-light border" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 100 100"><path ld="path1" fill="#f00"></path><path ld="path2" fill="#00f"></path></svg><div class="rounded shadow-sm border" ld="lottie" style="width:300px;height:300px"></div></div></div><script type="text/javascript" src="/assets/lib/@loadingio/ldquery/main/ldq.min.js"></script><script type="text/javascript" src="/assets/lib/ldview/main/index.min.js"></script><script type="text/javascript" src="/assets/lib/ldcover/main/index.min.js"></script><script type="text/javascript" src="/assets/lib/ldloader/main/index.min.js"></script><script type="text/javascript" src="/assets/lib/cubify/dev/index.min.js"></script><script type="text/javascript" src="/assets/lib/lottie-web/main/build/player/lottie.min.js"></script><script>var path, view, x$, y$, q, paths, json;
+path = "M23.5,1C35.90654,1,46,11.09346,46,23.5S35.90654,46,23.5,46S1,35.90654,1,23.5S11.09346,1,23.5,1 M23.5,0C10.52131,0,0,10.52131,0,23.5S10.52131,47,23.5,47S47,36.47869,47,23.5S36.47869,0,23.5,0L23.5,0z";
+view = new ldview({
+  root: document.body
+});
+x$ = view.get('path1');
+x$.setAttribute('d', path);
+x$.setAttribute('stroke', '#000');
+x$.setAttribute('stroke-width', 5);
+x$.setAttribute('transform', "translate(20,20)");
+y$ = view.get('path2');
+y$.setAttribute('d', q = cubify.d(path));
+y$.setAttribute('stroke', '#000');
+y$.setAttribute('stroke-width', 5);
+y$.setAttribute('transform', "translate(20,20)");
+paths = path.split(/M/).map(function(it){
+  return "M" + it;
+});
+paths = paths.map(function(path){
+  var pts;
+  pts = cubify(path);
+  return path = {
+    ty: 'sh',
+    ks: {
+      k: {
+        c: false,
+        v: pts.map(function(it){
+          return [it[1], -it[2]];
+        }),
+        i: pts.map(function(it){
+          return [it[3] - it[1], -(it[4] - it[2])];
+        }),
+        o: pts.map(function(it){
+          return [it[5] - it[1], -(it[6] - it[2])];
+        })
+      }
+    }
+  };
+});
+json = {
+  nm: "Bouncy Ball",
+  v: "5.5.2",
+  ip: 0,
+  op: 120,
+  fr: 60,
+  w: 100,
+  h: 100,
+  layers: [{
+    ddd: 0,
+    ty: 4,
+    st: 0,
+    ip: 0,
+    op: 120,
+    ks: {
+      o: {
+        a: 0,
+        k: 100
+      }
+    },
+    shapes: [{
+      ty: 'gr',
+      it: paths.concat([
+        {
+          ty: 'st',
+          o: {
+            a: 0,
+            k: 100
+          },
+          w: {
+            a: 0,
+            k: 5
+          },
+          c: {
+            a: 0,
+            k: [1, 0, 0]
+          }
+        }, {
+          ty: "tr",
+          o: {
+            a: 0,
+            k: 100
+          },
+          p: {
+            a: 0,
+            k: [20, 20]
+          }
+        }
+      ])
+    }]
+  }]
+};
+lottie.loadAnimation({
+  container: view.get('lottie'),
+  path: URL.createObjectURL(new Blob([JSON.stringify(json)], {
+    type: "application/json"
+  })),
+  render: "svg/canvas/html",
+  loop: true,
+  autoplay: true,
+  name: "hello world"
+});</script></body></html>
