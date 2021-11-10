@@ -22,6 +22,12 @@ var has = "hasOwnProperty";
 var pathCommand = /([a-z])[\s,]*((-?\d*\.?\d*(?:e[\-+]?\d+)?[\s]*,?[\s]*)+)/ig;
 var pathValues = /(-?\d*\.?\d*(?:e[\-+]?\\d+)?)[\s]*,?[\s]*/ig;
 var p2s = /,?([a-z]),?/gi;
+var math = Math;
+var PI = math.PI;
+var mmin = math.min;
+var mmax = math.max;
+var pow = math.pow;
+var abs = math.abs;
 
 function l2c(x1, y1, x2, y2) {
     return [x1, y1, x2, y2, x2, y2];
