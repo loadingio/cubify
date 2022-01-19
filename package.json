@@ -1,8 +1,9 @@
 {
   "name": "cubify",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "transform path d attribute into list of cubic bezier segment",
-  "main": "index.js",
+  "browser": "dist/index.min.js",
+  "main": "dist/index.min.js",
   "files": [
     "dist/**/*"
   ],
@@ -13,14 +14,14 @@
   "author": "zbryikt",
   "license": "MIT",
   "devDependencies": {
-    "@loadingio/bootstrap.ext": "^0.0.1",
-    "@loadingio/ldquery": "^2.2.1",
-    "@zbryikt/template": "^2.3.22",
-    "bootstrap": "^5.1.3",
-    "fedep": "^0.0.17",
-    "ldcover": "^2.0.0",
-    "ldloader": "^2.1.0",
-    "ldview": "^0.2.7",
+    "@loadingio/bootstrap.ext": "^0.0.4",
+    "@loadingio/ldquery": "^3.0.1",
+    "@zbryikt/template": "^2.3.33",
+    "bootstrap": "^4.6.1",
+    "fedep": "^1.1.0",
+    "ldcover": "^3.0.1",
+    "ldloader": "^3.0.0",
+    "ldview": "^1.0.0",
     "lottie-web": "^5.8.1"
   },
   "frontendDependencies": {

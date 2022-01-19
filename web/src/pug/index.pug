@@ -1,8 +1,8 @@
 doctype html
 html
-  include @/@loadingio/bootstrap.ext/dist/index.pug
+  include @/@loadingio/bootstrap.ext/index.pug
   head
-    +css("/assets/lib/bootstrap/main/css/bootstrap.min.css")
+    +css("/assets/lib/bootstrap/main/dist/css/bootstrap.min.css")
     +css("/assets/lib/@loadingio/bootstrap.ext/main/index.min.css")
     style(type="text/css"): :stylus
       html,body { width: 100%; height: 100% }
@@ -13,9 +13,9 @@ html
         path(ld="path1", fill="#f00")
         path(ld="path2", fill="#00f")
 
-    +script("/assets/lib/@loadingio/ldquery/main/ldq.min.js")
+    +script("/assets/lib/@loadingio/ldquery/main/index.min.js")
     +script("/assets/lib/ldview/main/index.min.js")
     +script("/assets/lib/ldcover/main/index.min.js")
     +script("/assets/lib/ldloader/main/index.min.js")
     +script("/assets/lib/cubify/dev/index.min.js")
-    script: include:lsc index.ls
+    script(type="module"): include:lsc index.ls
